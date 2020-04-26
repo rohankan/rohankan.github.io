@@ -1,0 +1,727 @@
+<!DOCTYPE html>
+<html><head>
+        <title>Opportunity Portal</title>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+        <script async="" src="https://buttons-config.sharethis.com/js/5ea50bed9ad3eb0012e1644f.js"></script><script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+        <script type="text/javascript" src="https://platform-api.sharethis.com/js/sharethis.js#property=5ea50bed9ad3eb0012e1644f&amp;product=inline-share-buttons" async="async"></script>
+        <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+        <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+        <![endif]-->
+        <style>
+            .navigation-bar {
+                position: fixed;
+                z-index: 100;
+                width: 100%;
+            }
+
+            .flex-center {
+                display: flex;
+                justify-content: center;
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .email-container {
+                margin-bottom: 100px;
+                padding: 0 !important;
+                margin-left: 0 !important;
+                margin-right: 0 !important;
+            }
+
+            .no-padding {
+                padding: 0 !important;
+            }
+        </style>
+    <style type="text/css">#st-1 {
+  font-family: "Helvetica Neue", Verdana, Helvetica, Arial, sans-serif;;
+  direction: ltr;
+  display: block;
+  opacity: 1;
+  text-align: center;
+  z-index: 94034;
+}
+#st-1.st-animated {
+  -moz-transition: o 0.2s ease-in, p 0.2s ease-in, a 0.2s ease-in, c 0.2s ease-in, i 0.2s ease-in, t 0.2s ease-in, y 0.2s ease-in; -ms-transition: o 0.2s ease-in, p 0.2s ease-in, a 0.2s ease-in, c 0.2s ease-in, i 0.2s ease-in, t 0.2s ease-in, y 0.2s ease-in; -o-transition: o 0.2s ease-in, p 0.2s ease-in, a 0.2s ease-in, c 0.2s ease-in, i 0.2s ease-in, t 0.2s ease-in, y 0.2s ease-in; -webkit-transition: o 0.2s ease-in, p 0.2s ease-in, a 0.2s ease-in, c 0.2s ease-in, i 0.2s ease-in, t 0.2s ease-in, y 0.2s ease-in; transition: o 0.2s ease-in, p 0.2s ease-in, a 0.2s ease-in, c 0.2s ease-in, i 0.2s ease-in, t 0.2s ease-in, y 0.2s ease-in;
+}
+#st-1.st-hidden {
+  opacity: 0;
+}
+#st-1.st-hide {
+  display: none;
+}
+#st-1 .st-btn {
+  -moz-box-sizing: border-box;
+-webkit-box-sizing: border-box;
+box-sizing: border-box;
+  -moz-transition: opacity 0.2s ease-in, top 0.2s ease-in; -ms-transition: opacity 0.2s ease-in, top 0.2s ease-in; -o-transition: opacity 0.2s ease-in, top 0.2s ease-in; -webkit-transition: opacity 0.2s ease-in, top 0.2s ease-in; transition: opacity 0.2s ease-in, top 0.2s ease-in;
+  -moz-border-radius: 4px;
+-webkit-border-radius: 4px;
+border-radius: 4px;
+  border: none;
+  cursor: pointer;
+  display: inline-block;
+  font-size: 11px;
+  height: 32px;
+  line-height: 32px;
+  margin-right: 8px;
+  padding: 0 8px;
+  position: relative;
+  text-align: center;
+  top: 0;
+  vertical-align: top;
+  white-space: nowrap;
+}
+#st-1 .st-btn:last-child {
+  margin-right: 0;
+}
+#st-1 .st-btn > svg {
+  height: 16px;
+  width: 16px;
+  position: relative;
+  top: 8px;
+  vertical-align: top;
+}
+#st-1 .st-btn > img {
+  display: inline-block;
+  height: 16px;
+  width: 16px;
+  position: relative;
+  top: 8px;
+  vertical-align: top;
+}
+#st-1 .st-btn > span {
+  -moz-transition: all 0.2s ease-in; -ms-transition: all 0.2s ease-in; -o-transition: all 0.2s ease-in; -webkit-transition: all 0.2s ease-in; transition: all 0.2s ease-in;
+  color: #fff;
+  display: inline-block;
+  font-weight: 500;
+  letter-spacing: 0.5px;
+  min-width: 60px;
+  opacity: 1;
+  padding: 0 6px;
+  position: relative;
+  vertical-align: top;
+}
+#st-1.st-has-labels .st-btn {
+  min-width: 120px;
+}
+#st-1.st-has-labels .st-btn.st-remove-label {
+  min-width: 50px;
+}
+#st-1.st-has-labels .st-btn.st-remove-label > span {
+  display: none;
+}
+#st-1.st-has-labels .st-btn.st-hide-label > span {
+  display: none;
+}
+#st-1 .st-total {
+  color: #555;
+  display: inline-block;
+  font-weight: 500;
+  line-height: 12px;
+  margin-right: 0;
+  max-width: 80px;
+  padding: 4px 8px;
+  text-align: center;
+}
+#st-1 .st-total.st-hidden {
+  display: none;
+}
+#st-1 .st-total > span {
+  font-size: 16px;
+  line-height: 17px;
+  display: block;
+  padding: 0;
+}
+#st-1 .st-total > span.st-shares {
+  font-size: 9px;
+  line-height: 9px;
+}
+#st-1.st-justified {
+  display: flex;
+  text-align: center;
+}
+#st-1.st-justified .st-btn {
+  -moz-flex: 1;
+-ms-flex: 1;
+-webkit-flex: 1;
+flex: 1;
+}#st-1 .st-btn:hover {
+  opacity: .8;
+  top: -4px;
+}#st-1 .st-btn[data-network='facebook'] {
+  background-color: #4267B2;
+}
+#st-1 .st-btn[data-network='facebook'] svg {
+  fill: #fff;
+}
+#st-1 .st-btn[data-network='facebook'] > span {
+  color: #fff;
+}
+#st-1 .st-btn[data-network='twitter'] {
+  background-color: #55acee;
+}
+#st-1 .st-btn[data-network='twitter'] svg {
+  fill: #fff;
+}
+#st-1 .st-btn[data-network='twitter'] > span {
+  color: #fff;
+}
+#st-1 .st-btn[data-network='pinterest'] {
+  background-color: #CB2027;
+}
+#st-1 .st-btn[data-network='pinterest'] svg {
+  fill: #fff;
+}
+#st-1 .st-btn[data-network='pinterest'] > span {
+  color: #fff;
+}
+#st-1 .st-btn[data-network='email'] {
+  background-color: #7d7d7d;
+}
+#st-1 .st-btn[data-network='email'] svg {
+  fill: #fff;
+}
+#st-1 .st-btn[data-network='email'] > span {
+  color: #fff;
+}
+#st-1 .st-btn[data-network='sms'] {
+  background-color: #ffbd00;
+}
+#st-1 .st-btn[data-network='sms'] svg {
+  fill: #fff;
+}
+#st-1 .st-btn[data-network='sms'] > span {
+  color: #fff;
+}
+#st-1 .st-btn[data-network='sharethis'] {
+  background-color: #95D03A;
+}
+#st-1 .st-btn[data-network='sharethis'] svg {
+  fill: #fff;
+}
+#st-1 .st-btn[data-network='sharethis'] > span {
+  color: #fff;
+}</style></head>
+    <body data-gr-c-s-loaded="true" class="vsc-initialized">
+        <nav class="navbar navbar-expand-lg navbar-light bg-light navigation-bar">
+            <a class="navbar-brand" href="#">Opportunity Portal</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link" href="mailto:rohankanchana@gmail.com">Contact Us</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="https://docs.google.com/forms/d/e/1FAIpQLSe8LsN-pJ9RGBLLGkupd0CKy5PcLXUFjnsl24yk5ucSkofobg/viewform?usp=sf_link">Submit Opportunity</a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+        <div style="height: 6vh"></div>
+        <div style="width: 100%">
+            <div class="email-container container-fluid row">
+                <div class="visible-lg col-lg-2">
+                    <div style="width: 100%">&nbsp;</div>
+                </div>
+                <div class="col-lg-5 col-sm-12 no-padding">
+                    <table align="center" border="0" cellpadding="0" cellspacing="0" height="100%" width="100%" id="bodyTable" style="border-collapse: collapse;mso-table-lspace: 0pt;mso-table-rspace: 0pt;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;height: 100%;margin: 0;padding: 0;width: 100%;background-color: #FAFAFA;">
+    <tbody><tr>
+        <td align="center" valign="top" id="bodyCell" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;height: 100%;margin: 0;padding: 0;width: 100%;border-top: 0;">
+            <!-- BEGIN TEMPLATE // -->
+            <table border="0" cellpadding="0" cellspacing="0" width="100%" style="border-collapse: collapse;mso-table-lspace: 0pt;mso-table-rspace: 0pt;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">
+                <tbody>
+                <tr>
+                    <td align="center" valign="top" id="templateHeader" style="background:#FFFFFF none no-repeat center/cover;mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;background-color: #FFFFFF;background-image: none;background-repeat: no-repeat;background-position: center;background-size: cover;border-top: 0;border-bottom: 0;padding-top: 9px;padding-bottom: 0;">
+                        <!--[if (gte mso 9)|(IE)]>
+                        <table align="center" border="0" cellspacing="0" cellpadding="0" width="600" style="width:100%;">
+                            <tr>
+                                <td align="center" valign="top" width="600" style="width:100%;">
+                        <![endif]-->
+                        <table align="center" border="0" cellpadding="0" cellspacing="0" width="100%" class="templateContainer" style="border-collapse: collapse;mso-table-lspace: 0pt;mso-table-rspace: 0pt;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;max-width: 100% !important;">
+                            <tbody><tr>
+                                <td valign="top" class="headerContainer" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;"><table border="0" cellpadding="0" cellspacing="0" width="100%" class="mcnImageBlock" style="min-width: 100%;border-collapse: collapse;mso-table-lspace: 0pt;mso-table-rspace: 0pt;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">
+                                    <tbody class="mcnImageBlockOuter">
+                                    <tr>
+                                        <td valign="top" style="padding: 9px;mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;" class="mcnImageBlockInner">
+                                            <table align="left" width="100%" border="0" cellpadding="0" cellspacing="0" class="mcnImageContentContainer" style="min-width: 100%;border-collapse: collapse;mso-table-lspace: 0pt;mso-table-rspace: 0pt;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">
+                                                <tbody><tr>
+                                                    <td class="mcnImageContent" valign="top" style="padding-right: 9px;padding-left: 9px;padding-top: 0;padding-bottom: 0;text-align: center;mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">
+
+
+                                                        <img align="center" alt="" src="https://mcusercontent.com/2c830bf50c33040f11e1c10eb/images/83dff0a2-d699-45be-b98c-fbc030182358.png" width="155" style="max-width: 100%;padding-bottom: 0;display: inline !important;vertical-align: bottom;border: 0;height: auto;outline: none;text-decoration: none;-ms-interpolation-mode: bicubic;" class="mcnImage">
+
+
+                                                    </td>
+                                                </tr>
+                                                </tbody></table>
+                                        </td>
+                                    </tr>
+                                    </tbody>
+                                </table></td>
+                            </tr>
+                            </tbody></table>
+                        <!--[if (gte mso 9)|(IE)]>
+                        </td>
+                        </tr>
+                        </table>
+                        <![endif]-->
+                    </td>
+                </tr>
+                <tr>
+                    <td align="center" valign="top" id="templateBody" style="background:#FFFFFF none no-repeat center/cover;mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;background-color: #FFFFFF;background-image: none;background-repeat: no-repeat;background-position: center;background-size: cover;border-top: 0;border-bottom: 0;padding-top: 9px;padding-bottom: 9px;">
+                        <!--[if (gte mso 9)|(IE)]>
+                        <table align="center" border="0" cellspacing="0" cellpadding="0" width="600" style="width:100%;">
+                            <tr>
+                                <td align="center" valign="top" width="600" style="width:100%;">
+                        <![endif]-->
+                        <table align="center" border="0" cellpadding="0" cellspacing="0" width="100%" class="templateContainer" style="border-collapse: collapse;mso-table-lspace: 0pt;mso-table-rspace: 0pt;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;max-width: 100% !important;">
+                            <tbody><tr>
+                                <td valign="top" class="bodyContainer" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;"><table border="0" cellpadding="0" cellspacing="0" width="100%" class="mcnTextBlock" style="min-width: 100%;border-collapse: collapse;mso-table-lspace: 0pt;mso-table-rspace: 0pt;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">
+                                    <tbody class="mcnTextBlockOuter">
+                                    <tr>
+                                        <td valign="top" class="mcnTextBlockInner" style="padding-top: 9px;mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">
+                                            <!--[if mso]>
+                                            <table align="left" border="0" cellspacing="0" cellpadding="0" width="100%" style="width:100%;">
+                                                <tr>
+                                            <![endif]-->
+
+                                            <!--[if mso]>
+                                            <td valign="top" width="600" style="width:100%;">
+                                            <![endif]-->
+                                            <table align="left" border="0" cellpadding="0" cellspacing="0" style="max-width: 100%;min-width: 100%;border-collapse: collapse;mso-table-lspace: 0pt;mso-table-rspace: 0pt;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;" width="100%" class="mcnTextContentContainer">
+                                                <tbody><tr>
+
+                                                    <td valign="top" class="mcnTextContent" style="padding-top: 0;padding-right: 18px;padding-bottom: 9px;padding-left: 18px;mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;word-break: break-word;color: #202020;font-family: Helvetica;font-size: 16px;line-height: 150%;text-align: left;">
+
+                                                        <h1 style="text-align: center;display: block;margin: 0;padding: 0;color: #202020;font-family: Helvetica;font-size: 26px;font-style: normal;font-weight: bold;line-height: 125%;letter-spacing: normal;"><span style="font-size:38px"><span style="font-family:merriweather,georgia,times new roman,serif">How To Keep Busy During Quarantine:</span></span></h1>
+
+                                                    </td>
+                                                </tr>
+                                                </tbody></table>
+                                            <!--[if mso]>
+                                            </td>
+                                            <![endif]-->
+
+                                            <!--[if mso]>
+                                            </tr>
+                                            </table>
+                                            <![endif]-->
+                                        </td>
+                                    </tr>
+                                    </tbody>
+                                </table><table border="0" cellpadding="0" cellspacing="0" width="100%" class="mcnDividerBlock" style="min-width: 100%;border-collapse: collapse;mso-table-lspace: 0pt;mso-table-rspace: 0pt;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;table-layout: fixed !important;">
+                                    <tbody class="mcnDividerBlockOuter">
+                                    <tr>
+                                        <td class="mcnDividerBlockInner" style="min-width: 100%;padding: 18px;mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">
+                                            <table class="mcnDividerContent" border="0" cellpadding="0" cellspacing="0" width="100%" style="min-width: 100%;border-top-width: 2px;border-top-style: solid;border-top-color: #EAEAEA;border-collapse: collapse;mso-table-lspace: 0pt;mso-table-rspace: 0pt;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">
+                                                <tbody><tr>
+                                                    <td style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">
+                                                        <span></span>
+                                                    </td>
+                                                </tr>
+                                                </tbody></table>
+                                            <!--
+                                                            <td class="mcnDividerBlockInner" style="padding: 18px;">
+                                                            <hr class="mcnDividerContent" style="border-bottom-color:none; border-left-color:none; border-right-color:none; border-bottom-width:0; border-left-width:0; border-right-width:0; margin-top:0; margin-right:0; margin-bottom:0; margin-left:0;" />
+                                            -->
+                                        </td>
+                                    </tr>
+                                    </tbody>
+                                </table><table border="0" cellpadding="0" cellspacing="0" width="100%" class="mcnTextBlock" style="min-width: 100%;border-collapse: collapse;mso-table-lspace: 0pt;mso-table-rspace: 0pt;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">
+                                    <tbody class="mcnTextBlockOuter">
+                                    <tr>
+                                        <td valign="top" class="mcnTextBlockInner" style="padding-top: 9px;mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">
+                                            <!--[if mso]>
+                                            <table align="left" border="0" cellspacing="0" cellpadding="0" width="100%" style="width:100%;">
+                                                <tr>
+                                            <![endif]-->
+
+                                            <!--[if mso]>
+                                            <td valign="top" width="600" style="width:100%;">
+                                            <![endif]-->
+                                            <table align="left" border="0" cellpadding="0" cellspacing="0" style="max-width: 100%;min-width: 100%;border-collapse: collapse;mso-table-lspace: 0pt;mso-table-rspace: 0pt;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;" width="100%" class="mcnTextContentContainer">
+                                                <tbody><tr>
+
+                                                    <td valign="top" class="mcnTextContent" style="padding-top: 0;padding-right: 18px;padding-bottom: 9px;padding-left: 18px;mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;word-break: break-word;color: #202020;font-family: Helvetica;font-size: 16px;line-height: 150%;text-align: left;">
+
+                                                        <h1 style="text-align: center;display: block;margin: 0;padding: 0;color: #202020;font-family: Helvetica;font-size: 26px;font-style: normal;font-weight: bold;line-height: 125%;letter-spacing: normal;"><strong>Take A Free Online Course From An Ivy League University</strong></h1>
+                                                        &nbsp;
+
+                                                        <p style="margin: 10px 0;padding: 0;mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #202020;font-family: Helvetica;font-size: 16px;line-height: 150%;text-align: left;"><img data-file-id="12851796" src="https://mcusercontent.com/2c830bf50c33040f11e1c10eb/images/3a88bb01-6b73-4fa0-a956-4fac0812f2f6.jpg" style="border: 0px initial;width: 100%;margin: 0px;outline: none;text-decoration: none;-ms-interpolation-mode: bicubic;"><br>
+                                                            <br>There are over 450 classes being offered online from various Ivy League Institutions. Classes are free to audit via EdX and&nbsp;Coursera. Topics range from healthcare to business to coding! They've got it all- take the time to brush up on your skills or to learn something new.<br>
+                                                            <br>
+                                                            They've also got some great tips on how to stay focused and organized with your classes and work during Quarantine- check those out, too!<br>
+                                                            <br>
+                                                            <a href="https://www.freecodecamp.org/news/ivy-league-free-online-courses-a0d7ae675869/" target="_blank" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #007C89;font-weight: normal;text-decoration: underline;">https://www.freecodecamp.org/news/ivy-league-free-online-courses-a0d7ae675869/</a><br>
+                                                            &nbsp;</p>
+
+                                                    </td>
+                                                </tr>
+                                                </tbody></table>
+                                            <!--[if mso]>
+                                            </td>
+                                            <![endif]-->
+
+                                            <!--[if mso]>
+                                            </tr>
+                                            </table>
+                                            <![endif]-->
+                                        </td>
+                                    </tr>
+                                    </tbody>
+                                </table><table border="0" cellpadding="0" cellspacing="0" width="100%" class="mcnDividerBlock" style="min-width: 100%;border-collapse: collapse;mso-table-lspace: 0pt;mso-table-rspace: 0pt;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;table-layout: fixed !important;">
+                                    <tbody class="mcnDividerBlockOuter">
+                                    <tr>
+                                        <td class="mcnDividerBlockInner" style="min-width: 100%;padding: 18px;mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">
+                                            <table class="mcnDividerContent" border="0" cellpadding="0" cellspacing="0" width="100%" style="min-width: 100%;border-top-width: 2px;border-top-style: solid;border-top-color: #EAEAEA;border-collapse: collapse;mso-table-lspace: 0pt;mso-table-rspace: 0pt;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">
+                                                <tbody><tr>
+                                                    <td style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">
+                                                        <span></span>
+                                                    </td>
+                                                </tr>
+                                                </tbody></table>
+                                            <!--
+                                                            <td class="mcnDividerBlockInner" style="padding: 18px;">
+                                                            <hr class="mcnDividerContent" style="border-bottom-color:none; border-left-color:none; border-right-color:none; border-bottom-width:0; border-left-width:0; border-right-width:0; margin-top:0; margin-right:0; margin-bottom:0; margin-left:0;" />
+                                            -->
+                                        </td>
+                                    </tr>
+                                    </tbody>
+                                </table><table border="0" cellpadding="0" cellspacing="0" width="100%" class="mcnTextBlock" style="min-width: 100%;border-collapse: collapse;mso-table-lspace: 0pt;mso-table-rspace: 0pt;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">
+                                    <tbody class="mcnTextBlockOuter">
+                                    <tr>
+                                        <td valign="top" class="mcnTextBlockInner" style="padding-top: 9px;mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">
+                                            <!--[if mso]>
+                                            <table align="left" border="0" cellspacing="0" cellpadding="0" width="100%" style="width:100%;">
+                                                <tr>
+                                            <![endif]-->
+
+                                            <!--[if mso]>
+                                            <td valign="top" width="600" style="width:100%;">
+                                            <![endif]-->
+                                            <table align="left" border="0" cellpadding="0" cellspacing="0" style="max-width: 100%;min-width: 100%;border-collapse: collapse;mso-table-lspace: 0pt;mso-table-rspace: 0pt;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;" width="100%" class="mcnTextContentContainer">
+                                                <tbody><tr>
+
+                                                    <td valign="top" class="mcnTextContent" style="padding-top: 0;padding-right: 18px;padding-bottom: 9px;padding-left: 18px;mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;word-break: break-word;color: #202020;font-family: Helvetica;font-size: 16px;line-height: 150%;text-align: left;">
+
+                                                        <h1 style="text-align: center;display: block;margin: 0;padding: 0;color: #202020;font-family: Helvetica;font-size: 26px;font-style: normal;font-weight: bold;line-height: 125%;letter-spacing: normal;">Free Virtual Museum Tours<br>
+                                                            &nbsp;</h1>
+                                                        <img data-file-id="12851740" src="https://mcusercontent.com/2c830bf50c33040f11e1c10eb/images/3282de8c-9b0a-4065-870f-601970fc3b65.jpeg" style="border: 0px;width: 100%;height: 400px;margin: 0px;outline: none;text-decoration: none;-ms-interpolation-mode: bicubic;">
+                                                        <p style="margin: 10px 0;padding: 0;mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #202020;font-family: Helvetica;font-size: 16px;line-height: 150%;text-align: left;"><br>
+                                                            Various famous museums across the globe are offering free virtual tours.<br>
+                                                            <br>
+                                                            Here's a few museums and the links to their tours:<br>
+                                                            <br>
+                                                            <a href="https://artsandculture.google.com/partner/musee-dorsay-paris?hl=en" target="_blank" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #007C89;font-weight: normal;text-decoration: underline;">Musée d’Orsay, Paris&nbsp;</a><br>
+                                                            <br>
+                                                            Walk through one of the Musée d'Orsay's most popular galleries housing dozens of the works of&nbsp;famous French artists. This gallery features works from 1848 to 1914 from artists like Monet, Cézanne, and Gauguin to name just a few!<br>
+                                                            <br>
+                                                            <a href="https://www.louvre.fr/en/visites-en-ligne" target="_blank" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #007C89;font-weight: normal;text-decoration: underline;">The Louvre</a><br>
+                                                            <br>
+                                                            Save yourself a trip to Paris and take advantage of free virtual tours offered by the Louvre, one of the world’s most famous art museums! Some exhibits offered online include Egyptian Antiquities, Remains of the Louvre’s Moat, The Advent of the Artist, and Galerie d’Apollon.<br>
+                                                            <br>
+                                                            <a href="https://artsandculture.google.com/partner/national-gallery-of-art-washington-dc?hl=en" target="_blank" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #007C89;font-weight: normal;text-decoration: underline;">National Gallery of Art, Washington, D.C.</a><br>
+                                                            <br>
+                                                            The National Gallery of Art offers two online exhibits through Google. In the first exhibit, check out the history of American Fashion from 1740 to 1895. Then be sure to head over to the second exhibit to get a peek at a collection of Dutch Baroque artists like famous painter, Johannes Vermeer.</p>
+
+                                                        <p style="margin: 10px 0;padding: 0;mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #202020;font-family: Helvetica;font-size: 16px;line-height: 150%;text-align: left;"><br>
+                                                            <br>
+                                                            Check out more museums offering this awesome feature at the link below:<br>
+                                                            <a href="https://www.travelandleisure.com/attractions/museums-galleries/museums-with-virtual-tours" target="_blank" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #007C89;font-weight: normal;text-decoration: underline;">https://www.travelandleisure.com/attractions/museums-galleries/museums-with-virtual-tours</a></p>
+
+                                                    </td>
+                                                </tr>
+                                                </tbody></table>
+                                            <!--[if mso]>
+                                            </td>
+                                            <![endif]-->
+
+                                            <!--[if mso]>
+                                            </tr>
+                                            </table>
+                                            <![endif]-->
+                                        </td>
+                                    </tr>
+                                    </tbody>
+                                </table><table border="0" cellpadding="0" cellspacing="0" width="100%" class="mcnDividerBlock" style="min-width: 100%;border-collapse: collapse;mso-table-lspace: 0pt;mso-table-rspace: 0pt;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;table-layout: fixed !important;">
+                                    <tbody class="mcnDividerBlockOuter">
+                                    <tr>
+                                        <td class="mcnDividerBlockInner" style="min-width: 100%;padding: 18px;mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">
+                                            <table class="mcnDividerContent" border="0" cellpadding="0" cellspacing="0" width="100%" style="min-width: 100%;border-top-width: 2px;border-top-style: solid;border-top-color: #EAEAEA;border-collapse: collapse;mso-table-lspace: 0pt;mso-table-rspace: 0pt;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">
+                                                <tbody><tr>
+                                                    <td style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">
+                                                        <span></span>
+                                                    </td>
+                                                </tr>
+                                                </tbody></table>
+                                            <!--
+                                                            <td class="mcnDividerBlockInner" style="padding: 18px;">
+                                                            <hr class="mcnDividerContent" style="border-bottom-color:none; border-left-color:none; border-right-color:none; border-bottom-width:0; border-left-width:0; border-right-width:0; margin-top:0; margin-right:0; margin-bottom:0; margin-left:0;" />
+                                            -->
+                                        </td>
+                                    </tr>
+                                    </tbody>
+                                </table><table border="0" cellpadding="0" cellspacing="0" width="100%" class="mcnTextBlock" style="min-width: 100%;border-collapse: collapse;mso-table-lspace: 0pt;mso-table-rspace: 0pt;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">
+                                    <tbody class="mcnTextBlockOuter">
+                                    <tr>
+                                        <td valign="top" class="mcnTextBlockInner" style="padding-top: 9px;mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">
+                                            <!--[if mso]>
+                                            <table align="left" border="0" cellspacing="0" cellpadding="0" width="100%" style="width:100%;">
+                                                <tr>
+                                            <![endif]-->
+
+                                            <!--[if mso]>
+                                            <td valign="top" width="600" style="width:100%;">
+                                            <![endif]-->
+                                            <table align="left" border="0" cellpadding="0" cellspacing="0" style="max-width: 100%;min-width: 100%;border-collapse: collapse;mso-table-lspace: 0pt;mso-table-rspace: 0pt;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;" width="100%" class="mcnTextContentContainer">
+                                                <tbody><tr>
+
+                                                    <td valign="top" class="mcnTextContent" style="padding-top: 0;padding-right: 18px;padding-bottom: 9px;padding-left: 18px;mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;word-break: break-word;color: #202020;font-family: Helvetica;font-size: 16px;line-height: 150%;text-align: left;">
+
+                                                        <h1 style="text-align: center;display: block;margin: 0;padding: 0;color: #202020;font-family: Helvetica;font-size: 26px;font-style: normal;font-weight: bold;line-height: 125%;letter-spacing: normal;">Learn A New Language</h1>
+
+                                                        <h1 style="display: block;margin: 0;padding: 0;color: #202020;font-family: Helvetica;font-size: 26px;font-style: normal;font-weight: bold;line-height: 125%;letter-spacing: normal;text-align: left;"><br>
+                                                            <img data-file-id="12851824" src="https://mcusercontent.com/2c830bf50c33040f11e1c10eb/images/7dcca288-54e7-4c77-b5bb-1beb9f7a8697.png" style="border: 0px;width: 100%;margin: 0px;outline: none;text-decoration: none;-ms-interpolation-mode: bicubic;"></h1>
+                                                        <br>During your free time try learning a new language. With tons of language options at the low, low price of free, learning a new language is easy, accessible, and fun with <a href="https://www.duolingo.com" target="_blank" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #007C89;font-weight: normal;text-decoration: underline;">Duolingo</a>!<br>
+                                                        &nbsp;
+                                                    </td>
+                                                </tr>
+                                                </tbody></table>
+                                            <!--[if mso]>
+                                            </td>
+                                            <![endif]-->
+
+                                            <!--[if mso]>
+                                            </tr>
+                                            </table>
+                                            <![endif]-->
+                                        </td>
+                                    </tr>
+                                    </tbody>
+                                </table><table border="0" cellpadding="0" cellspacing="0" width="100%" class="mcnDividerBlock" style="min-width: 100%;border-collapse: collapse;mso-table-lspace: 0pt;mso-table-rspace: 0pt;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;table-layout: fixed !important;">
+                                    <tbody class="mcnDividerBlockOuter">
+                                    <tr>
+                                        <td class="mcnDividerBlockInner" style="min-width: 100%;padding: 18px;mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">
+                                            <table class="mcnDividerContent" border="0" cellpadding="0" cellspacing="0" width="100%" style="min-width: 100%;border-top-width: 2px;border-top-style: solid;border-top-color: #EAEAEA;border-collapse: collapse;mso-table-lspace: 0pt;mso-table-rspace: 0pt;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">
+                                                <tbody><tr>
+                                                    <td style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">
+                                                        <span></span>
+                                                    </td>
+                                                </tr>
+                                                </tbody></table>
+                                            <!--
+                                                            <td class="mcnDividerBlockInner" style="padding: 18px;">
+                                                            <hr class="mcnDividerContent" style="border-bottom-color:none; border-left-color:none; border-right-color:none; border-bottom-width:0; border-left-width:0; border-right-width:0; margin-top:0; margin-right:0; margin-bottom:0; margin-left:0;" />
+                                            -->
+                                        </td>
+                                    </tr>
+                                    </tbody>
+                                </table><table border="0" cellpadding="0" cellspacing="0" width="100%" class="mcnTextBlock" style="min-width: 100%;border-collapse: collapse;mso-table-lspace: 0pt;mso-table-rspace: 0pt;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">
+                                    <tbody class="mcnTextBlockOuter">
+                                    <tr>
+                                        <td valign="top" class="mcnTextBlockInner" style="padding-top: 9px;mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">
+                                            <!--[if mso]>
+                                            <table align="left" border="0" cellspacing="0" cellpadding="0" width="100%" style="width:100%;">
+                                                <tr>
+                                            <![endif]-->
+
+                                            <!--[if mso]>
+                                            <td valign="top" width="600" style="width:100%;">
+                                            <![endif]-->
+                                            <table align="left" border="0" cellpadding="0" cellspacing="0" style="max-width: 100%;min-width: 100%;border-collapse: collapse;mso-table-lspace: 0pt;mso-table-rspace: 0pt;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;" width="100%" class="mcnTextContentContainer">
+                                                <tbody><tr>
+
+                                                    <td valign="top" class="mcnTextContent" style="padding-top: 0;padding-right: 18px;padding-bottom: 9px;padding-left: 18px;mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;word-break: break-word;color: #202020;font-family: Helvetica;font-size: 16px;line-height: 150%;text-align: left;">
+
+                                                        <div style="text-align: center;"><span style="font-size:24px"><strong>Compete In The COVID-19 Open Research Dataset Challenge</strong></span></div>
+                                                        <br>
+                                                        <img data-file-id="12851848" src="https://mcusercontent.com/2c830bf50c33040f11e1c10eb/images/4a2e6e49-bb00-4e5f-913f-9480bb10269d.png" style="border: 0px;width: 100%;margin: 0px;outline: none;text-decoration: none;-ms-interpolation-mode: bicubic;"><br>
+                                                        <br>
+                                                        Use Artificial Intelligence to create an easier method for compiling research about COVID-19 through a competition that can help you and your community.<br>
+                                                        <br>
+                                                        Learn more <a href="https://www.kaggle.com/allen-institute-for-ai/CORD-19-research-challenge" target="_blank" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #007C89;font-weight: normal;text-decoration: underline;">here.</a>
+                                                    </td>
+                                                </tr>
+                                                </tbody></table>
+                                            <!--[if mso]>
+                                            </td>
+                                            <![endif]-->
+
+                                            <!--[if mso]>
+                                            </tr>
+                                            </table>
+                                            <![endif]-->
+                                        </td>
+                                    </tr>
+                                    </tbody>
+                                </table><table border="0" cellpadding="0" cellspacing="0" width="100%" class="mcnDividerBlock" style="min-width: 100%;border-collapse: collapse;mso-table-lspace: 0pt;mso-table-rspace: 0pt;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;table-layout: fixed !important;">
+                                    <tbody class="mcnDividerBlockOuter">
+                                    <tr>
+                                        <td class="mcnDividerBlockInner" style="min-width: 100%;padding: 18px;mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">
+                                            <table class="mcnDividerContent" border="0" cellpadding="0" cellspacing="0" width="100%" style="min-width: 100%;border-top-width: 2px;border-top-style: solid;border-top-color: #EAEAEA;border-collapse: collapse;mso-table-lspace: 0pt;mso-table-rspace: 0pt;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">
+                                                <tbody><tr>
+                                                    <td style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">
+                                                        <span></span>
+                                                    </td>
+                                                </tr>
+                                                </tbody></table>
+                                            <!--
+                                                            <td class="mcnDividerBlockInner" style="padding: 18px;">
+                                                            <hr class="mcnDividerContent" style="border-bottom-color:none; border-left-color:none; border-right-color:none; border-bottom-width:0; border-left-width:0; border-right-width:0; margin-top:0; margin-right:0; margin-bottom:0; margin-left:0;" />
+                                            -->
+                                        </td>
+                                    </tr>
+                                    </tbody>
+                                </table><table border="0" cellpadding="0" cellspacing="0" width="100%" class="mcnTextBlock" style="min-width: 100%;border-collapse: collapse;mso-table-lspace: 0pt;mso-table-rspace: 0pt;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">
+                                    <tbody class="mcnTextBlockOuter">
+                                    <tr>
+                                        <td valign="top" class="mcnTextBlockInner" style="padding-top: 9px;mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">
+                                            <!--[if mso]>
+                                            <table align="left" border="0" cellspacing="0" cellpadding="0" width="100%" style="width:100%;">
+                                                <tr>
+                                            <![endif]-->
+
+                                            <!--[if mso]>
+                                            <td valign="top" width="600" style="width:100%;">
+                                            <![endif]-->
+                                            <table align="left" border="0" cellpadding="0" cellspacing="0" style="max-width: 100%;min-width: 100%;border-collapse: collapse;mso-table-lspace: 0pt;mso-table-rspace: 0pt;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;" width="100%" class="mcnTextContentContainer">
+                                                <tbody><tr>
+
+                                                    <td valign="top" class="mcnTextContent" style="padding-top: 0;padding-right: 18px;padding-bottom: 9px;padding-left: 18px;mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;word-break: break-word;color: #202020;font-family: Helvetica;font-size: 16px;line-height: 150%;text-align: left;">
+
+                                                        <div style="text-align: left;"><br>
+                                                            <span style="font-size:24px"><strong>Test Your Problem Solving in Combating COVID-19 Challenge</strong></span><br>
+                                                            <br>
+                                                            <img data-file-id="12851888" src="https://mcusercontent.com/2c830bf50c33040f11e1c10eb/images/10680d11-4977-4b98-96e2-1d0b18b3e200.png" style="border: 0px;width: 100%;margin: 0px;outline: none;text-decoration: none;-ms-interpolation-mode: bicubic;"><br>
+                                                            <br>
+                                                            Enter this New York Academy of Science's competition by yourself or with your friends to develop a creative solution to solve issues faced around the world by the COVID-19 crisis.&nbsp;<br>
+                                                            <br>
+                                                            Click <a href="https://www.nyas.org/challenges/combating-covid-19/?tab=rules" target="_blank" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #007C89;font-weight: normal;text-decoration: underline;">here</a> to enter.</div>
+
+                                                    </td>
+                                                </tr>
+                                                </tbody></table>
+                                            <!--[if mso]>
+                                            </td>
+                                            <![endif]-->
+
+                                            <!--[if mso]>
+                                            </tr>
+                                            </table>
+                                            <![endif]-->
+                                        </td>
+                                    </tr>
+                                    </tbody>
+                                </table><table border="0" cellpadding="0" cellspacing="0" width="100%" class="mcnDividerBlock" style="min-width: 100%;border-collapse: collapse;mso-table-lspace: 0pt;mso-table-rspace: 0pt;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;table-layout: fixed !important;">
+                                    <tbody class="mcnDividerBlockOuter">
+                                    <tr>
+                                        <td class="mcnDividerBlockInner" style="min-width: 100%;padding: 18px;mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">
+                                            <table class="mcnDividerContent" border="0" cellpadding="0" cellspacing="0" width="100%" style="min-width: 100%;border-top-width: 2px;border-top-style: solid;border-top-color: #EAEAEA;border-collapse: collapse;mso-table-lspace: 0pt;mso-table-rspace: 0pt;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">
+                                                <tbody><tr>
+                                                    <td style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">
+                                                        <span></span>
+                                                    </td>
+                                                </tr>
+                                                </tbody></table>
+                                            <!--
+                                                            <td class="mcnDividerBlockInner" style="padding: 18px;">
+                                                            <hr class="mcnDividerContent" style="border-bottom-color:none; border-left-color:none; border-right-color:none; border-bottom-width:0; border-left-width:0; border-right-width:0; margin-top:0; margin-right:0; margin-bottom:0; margin-left:0;" />
+                                            -->
+                                        </td>
+                                    </tr>
+                                    </tbody>
+                                </table><table border="0" cellpadding="0" cellspacing="0" width="100%" class="mcnTextBlock" style="min-width: 100%;border-collapse: collapse;mso-table-lspace: 0pt;mso-table-rspace: 0pt;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">
+                                    <tbody class="mcnTextBlockOuter">
+                                    <tr>
+                                        <td valign="top" class="mcnTextBlockInner" style="padding-top: 9px;mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">
+                                            <!--[if mso]>
+                                            <table align="left" border="0" cellspacing="0" cellpadding="0" width="100%" style="width:100%;">
+                                                <tr>
+                                            <![endif]-->
+
+                                            <!--[if mso]>
+                                            <td valign="top" width="600" style="width:100%;">
+                                            <![endif]-->
+                                            <table align="left" border="0" cellpadding="0" cellspacing="0" style="max-width: 100%;min-width: 100%;border-collapse: collapse;mso-table-lspace: 0pt;mso-table-rspace: 0pt;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;" width="100%" class="mcnTextContentContainer">
+                                                <tbody><tr>
+
+                                                    <td valign="top" class="mcnTextContent" style="padding-top: 0;padding-right: 18px;padding-bottom: 9px;padding-left: 18px;mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;word-break: break-word;color: #202020;font-family: Helvetica;font-size: 16px;line-height: 150%;text-align: left;">
+
+                                                        <div style="text-align: center;"><font size="5"><strong>Start Your Own Blog</strong></font></div>
+                                                        <br>
+                                                        <img data-file-id="12852176" src="https://mcusercontent.com/2c830bf50c33040f11e1c10eb/images/759adece-6006-4e16-9e48-0dc2042da5b6.png" style="border: 0px;width: 100%;margin: 0px;outline: none;text-decoration: none;-ms-interpolation-mode: bicubic;"><br>
+                                                        <br>
+                                                        Whether you're into fashion, business, politics- anything- give it a go and start your own blog. Practice your writing skills and get creative with your own free blog on Word Press.&nbsp;<br>
+                                                        <br>
+                                                        P.S. Be sure to share it with your friends and others within your social network to also enjoy during the Quarantine!<br>
+                                                        <br>
+                                                        Click <a href="https://www.google.com/url?sa=t&amp;rct=j&amp;q=&amp;esrc=s&amp;source=web&amp;cd=1&amp;cad=rja&amp;uact=8&amp;ved=2ahUKEwiisr6UpMjoAhXwknIEHecqBXIQFjAAegQIARAB&amp;url=https%3A%2F%2Fwordpress.com%2F&amp;usg=AOvVaw1DhOsjClCulgIna4V94rRT" target="_blank" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #007C89;font-weight: normal;text-decoration: underline;">here</a> to get started!
+                                                    </td>
+                                                </tr>
+                                                </tbody></table>
+                                            <!--[if mso]>
+                                            </td>
+                                            <![endif]-->
+
+                                            <!--[if mso]>
+                                            </tr>
+                                            </table>
+                                            <![endif]-->
+                                        </td>
+                                    </tr>
+                                    </tbody>
+                                </table></td>
+                            </tr>
+                            </tbody></table>
+                        <!--[if (gte mso 9)|(IE)]>
+                        </td>
+                        </tr>
+                        </table>
+                        <![endif]-->
+                    </td>
+                </tr>
+
+                </tbody></table>
+            <!-- // END TEMPLATE -->
+        </td>
+    </tr>
+    </tbody></table>
+                    <div class="flex-center" style="margin-top: -30px;">
+                        <div>
+                            <b>Share via:</b>
+                            <div class="sharethis-inline-share-buttons st-center st-has-labels  st-inline-share-buttons st-animated" id="st-1"><div class="st-btn st-first st-remove-label" data-network="facebook" style="display: inline-block;">
+  <img alt="facebook sharing button" src="https://platform-cdn.sharethis.com/img/facebook.svg">
+  <span class="st-label">Share</span>
+</div><div class="st-btn st-remove-label" data-network="twitter" style="display: inline-block;">
+  <img alt="twitter sharing button" src="https://platform-cdn.sharethis.com/img/twitter.svg">
+  <span class="st-label">Tweet</span>
+</div><div class="st-btn st-remove-label" data-network="pinterest" style="display: inline-block;">
+  <img alt="pinterest sharing button" src="https://platform-cdn.sharethis.com/img/pinterest.svg">
+  <span class="st-label">Pin</span>
+</div><div class="st-btn st-remove-label" data-network="email" style="display: inline-block;">
+  <img alt="email sharing button" src="https://platform-cdn.sharethis.com/img/email.svg">
+  <span class="st-label">Email</span>
+</div><div class="st-btn  st-remove-label" data-network="sms" style="display: none;">
+  <img alt="sms sharing button" src="https://platform-cdn.sharethis.com/img/sms.svg">
+  <span class="st-label">Share</span>
+</div><div class="st-btn st-last  st-remove-label" data-network="sharethis" style="display: inline-block;">
+  <img alt="sharethis sharing button" src="https://platform-cdn.sharethis.com/img/sharethis.svg">
+  <span class="st-label">Share</span>
+</div></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+<iframe src="https://c.sharethis.mgr.consensu.org/portal-v2.html" id="st_gdpr_iframe" title="GDPR Consent Management" style="width: 0px; height: 0px; position: absolute; left: -5000px;"></iframe></body></html>
+
